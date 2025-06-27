@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.files.DownloadActions.click;
+import static org.openqa.selenium.bidi.script.LocalValue.setValue;
 
 public class PracticeForm {
 
@@ -32,10 +34,10 @@ public class PracticeForm {
         $("#userEmail").setValue("an.nefd@yandex.com");
 
         // Gender
-        $(byText("Female")).click();
+        $("#genterWrapper").$("label[for='gender-radio-2']").click();
 
         // Mobile
-        $("#userNumber").setValue("12345678900");
+        $("#userNumber").setValue("1234567890");
 
         // Date of Birth
         $("#dateOfBirthInput").clear();
@@ -48,7 +50,7 @@ public class PracticeForm {
         $$(".subjects-auto-complete__option").findBy(text("Chemistry")).click();
 
         // Hobbies
-        $("label[for='hobbies-checkbox-1']").click();
+        $("#hobbiesWrapper").$("label[for='hobbies-checkbox-1']").click();
 
         // Picture
         $("#uploadPicture").uploadFromClasspath("Photo.jpg");
@@ -59,7 +61,6 @@ public class PracticeForm {
         // State and City
         $("#react-select-3-input").setValue("NCR").pressEnter();
         $("#react-select-4-input").setValue("Noida").pressEnter();
-        $("#submit").pressEnter();
 
         $("#submit").click();
 
@@ -67,7 +68,7 @@ public class PracticeForm {
         $(".table-responsive").shouldHave(text("Nastya Nefedova"));
         $(".table-responsive").shouldHave(text("an.nefd@yandex.com"));
         $(".table-responsive").shouldHave(text("Female"));
-        $(".table-responsive").shouldHave(text("12345678900"));
+        $(".table-responsive").shouldHave(text("1234567890"));
         $(".table-responsive").shouldHave(text("12 May,2005"));
         $(".table-responsive").shouldHave(text("Chemistry"));
         $(".table-responsive").shouldHave(text("Sports"));
