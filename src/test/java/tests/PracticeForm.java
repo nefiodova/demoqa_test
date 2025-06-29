@@ -34,7 +34,7 @@ public class PracticeForm {
         $("#userEmail").setValue("an.nefd@yandex.com");
 
         // Gender
-        $("#genderWrapper").$(byText("Female")).click();
+        $("#genterWrapper").$(byText("Female")).click();
 
         // Mobile
         $("#userNumber").setValue("1234567890");
@@ -71,7 +71,7 @@ public class PracticeForm {
         $(".table-responsive").shouldHave(text("1234567890"));
         $(".table-responsive").shouldHave(text("12 May,2005"));
         $(".table-responsive").shouldHave(text("Chemistry"));
-        $(".table-responsive").shouldHave(text("Sports"));
+        $(".table-responsive").shouldHave(text("Music"));
         $(".table-responsive").shouldHave(text("Photo.jpg"));
         $(".table-responsive").shouldHave(text("Moscow street"));
         $(".table-responsive").shouldHave(text("NCR Noida"));
