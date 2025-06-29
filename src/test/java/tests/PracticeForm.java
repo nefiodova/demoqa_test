@@ -34,7 +34,7 @@ public class PracticeForm {
         $("#userEmail").setValue("an.nefd@yandex.com");
 
         // Gender
-        $("#genterWrapper").$("label[for='gender-radio-2']").click();
+        $("#genderWrapper").$(byText("Female")).click();
 
         // Mobile
         $("#userNumber").setValue("1234567890");
@@ -50,7 +50,7 @@ public class PracticeForm {
         $$(".subjects-auto-complete__option").findBy(text("Chemistry")).click();
 
         // Hobbies
-        $("#hobbiesWrapper").$("label[for='hobbies-checkbox-1']").click();
+        $("#hobbiesWrapper").$(byText("Music")).click();
 
         // Picture
         $("#uploadPicture").uploadFromClasspath("Photo.jpg");
